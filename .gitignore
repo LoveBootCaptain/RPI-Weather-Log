@@ -87,3 +87,11 @@ ENV/
 
 # Rope project settings
 .ropeproject
+/splunk_dashboard.xml
+splunk_dashboard.xml
+/config.json
+config.json
+.idea/
+/.idea/
+/.gitignore
+.gitignore
