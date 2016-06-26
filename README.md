@@ -16,7 +16,7 @@ more details.
 ![Raspberry Pi Splunk Weather Dashboard](https://db.tt/tjRKejq3)
 
 #### [My adafruit.io Weather Dashboard](https://io.adafruit.com/lovebootcaptain/weatherpi#)
-![adafruit.io Weather Dashboard](https://db.tt/0fiiqiEH)
+![adafruit.io Weather Dashboard](https://db.tt/0fiiqiEH) 
 
 ## Install
 
