@@ -12,6 +12,8 @@ Feel free to change it in any way you want... Sorry that the output is in german
 in german. You can change it via the options string in the python script. Read the forecast.io api documentation for 
 more details.
 
+![alt tag](https://db.tt/rXlH00jW)
+
 ## Install
 
 `cd`
