@@ -3,7 +3,10 @@ A complete weather station for the RaspberryPi, using forecast.io and adafruit s
 which can be used for SPLUNK data analysis. I included the scroll pHAT from Pimoroni to display some of the weather data. 
 There are also some examples shown who to make some nice outputs with string transformations. Some data is send to 
 adafruit.io. perhaps you have to change the feed names and io-data to your individual likings. See the adafruit.io 
-api documentation. 
+api documentation.
+
+For controlling the adafruit BME280 sensor i added the necessary and lightly modified sensor and I2C driver, to get 
+everything setup in python3. so please use python3 to run this.
 
 Feel free to change it in any way you want... Sorry that the output is in german. The forecast.io data are also fetched
 in german. You can change it via the options string in the python script. See the forecast.io api documentation.
@@ -51,3 +54,5 @@ To test if everything is set up correctly just try:
 If everything is working correctly you can run the service on boot with:
 
 `sudo update-rc.d rpi_weather_log defaults`
+
+## Enjoy
