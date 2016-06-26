@@ -13,9 +13,9 @@ A complete weather station for the RaspberryPi, using forecast.io and adafruit s
 
 `sudo nano config.json`
 
-Replace the "xxxx..." with your forecast.io-API-KEY in `"FORECAST_IO_KEY"`.
+Replace the `"xxxx..."` with your forecast.io-API-KEY in `"FORECAST_IO_KEY"`.
 
-Replace the "xxxx..." with your Adafruit.io-API-KEY in `"ADAFRUIT_IO_KEY"`.
+Replace the `"xxxx..."` with your Adafruit.io-API-KEY in `"ADAFRUIT_IO_KEY"`.
 
 Change the size of the log file in `"LOG_SIZE"` (in Bytes). 10MB is default.
 
