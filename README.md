@@ -1,11 +1,20 @@
 # RPI-Weather-Log
-A complete weather station for the RaspberryPi, using forecast.io and adafruit sensors to log all weather data to a file which can be used for SPLUNK data analysis.
+A complete weather station for the RaspberryPi, using forecast.io and adafruit sensors to log all weather data to a file 
+which can be used for SPLUNK data analysis. I included the scroll pHAT from Pimoroni to display some of the weather data. 
+There are also some examples shown who to make some nice outputs with string transformations. Some data is send to 
+adafruit.io. perhaps you have to change the feed names and io-data to your individual likings. See the adafruit.io 
+api documentation. 
+
+Feel free to change it in any way you want... Sorry that the output is in german. The forecast.io data are also fetched
+in german. You can change it via the options string in the python script. See the forecast.io api documentation.
 
 ## Install
 
 `cd`
 
 `git clone https://github.com/LoveBootCaptain/RPI-Weather-Log.git`
+
+## Config
 
 `cd RPI-Weather-Log`
 
@@ -23,9 +32,9 @@ Change the number of log file backups in `"BACKUP_COUNT"`. 100 is default.
 
 Change the refresh rate of weather data in `"REFRESH_RATE"`. 5min is default.
 
-`CTRL + S` for save
+`CTRL + S` for save and `CTRL + X` for quit
 
-`CTRL + X` for quit
+## Make it a linux service
 
 `sudo chmod +x rpi_weather_log.sh` make the .sh script executable, this will run as service
 

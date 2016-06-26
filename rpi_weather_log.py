@@ -1,30 +1,36 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import json
 import locale
 import socket
 import sys
 import time
 from datetime import datetime
-
 import requests
 import scrollphat
 from Adafruit_IO import Client
 from Adafruit_BME280 import *
-import json
 import logging.handlers
 
+# this is useful for locale string formats
+locale.setlocale(locale.LC_TIME, 'de_DE.utf-8')
+
+# read the config file
 config_data = open('config.json').read()
 config = json.loads(config_data)
 
+# set the configs
 FORECAST_IO_KEY = config['FORECAST_IO_KEY']
 ADAFRUIT_IO_KEY = config['ADAFRUIT_IO_KEY']
 LOG_SIZE = config['LOG_SIZE']
 BACKUP_COUNT = config['BACKUP_COUNT']
 REFRESH_RATE = config['REFRESH_RATE']
 
+# create a sensor instance for the adafruit BME280
 sensor = BME280(mode=BME280_OSAMPLE_8)
 
+# get the host and build a path for the logfile and make the file name individual
 host = socket.gethostname()
 path = '/home/pi/RPI-Weather-Log/logs/rpi_weather_data_{}.log'.format(host)
 LOG_FILENAME = path
@@ -36,10 +42,6 @@ weather_logger.setLevel(logging.INFO)
 # Add the log message handler to the logger and make a log-rotation of 100 files with max. 10MB per file
 handler = logging.handlers.RotatingFileHandler(LOG_FILENAME, maxBytes=LOG_SIZE, backupCount=BACKUP_COUNT,)
 weather_logger.addHandler(handler)
-
-
-# this is useful for locale string formats
-locale.setlocale(locale.LC_TIME, 'de_DE.utf-8')
 
 # Create an instance of the REST client.
 aio = Client(ADAFRUIT_IO_KEY)
@@ -108,12 +110,13 @@ def translate_umlaute(string_input):
     return string_input.translate(str.maketrans(translations))
 
 
-# let's get the weather and build some nice output strings
+# let's get the weather data and build some nice output strings
 # TODO: This have to be separated and ordered... split it etc. and get rid of the print for debug (no need anymore)
 def get_weather():
     # Get the weather data
     print('Wetterdaten werden aktualisiert')
 
+    # read the sensor data
     sensor_temp = sensor.read_temperature()
     pascals = sensor.read_pressure()
     sensor_pressure = pascals / 100     # hectopascals

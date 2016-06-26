@@ -23,18 +23,18 @@ DAEMON_OPTS=""
 DAEMON_USER=root
 
 # The process ID of the script when it runs is stored here:
-PIDFILE=/var/run/$DAEMON_NAME.pid
+PIDFILE=/var/run/${DAEMON_NAME}.pid
 
 . /lib/lsb/init-functions
 
 do_start () {
     log_daemon_msg "Starting system $DAEMON_NAME daemon"
-    start-stop-daemon --start --background --pidfile $PIDFILE --make-pidfile --user $DAEMON_USER --chuid $DAEMON_USER --startas $DAEMON -- $DAEMON_OPTS
+    start-stop-daemon --start --background --pidfile ${PIDFILE} --make-pidfile --user ${DAEMON_USER} --chuid ${DAEMON_USER} --startas ${DAEMON} -- ${DAEMON_OPTS}
     log_end_msg $?
 }
 do_stop () {
     log_daemon_msg "Stopping system $DAEMON_NAME daemon"
-    start-stop-daemon --stop --pidfile $PIDFILE --retry 10
+    start-stop-daemon --stop --pidfile ${PIDFILE} --retry 10
     log_end_msg $?
 }
 
