@@ -12,7 +12,11 @@ Feel free to change it in any way you want... Sorry that the output is in german
 in german. You can change it via the options string in the python script. Read the forecast.io api documentation for 
 more details.
 
+#### Raspberry Pi Splunk Weather Dashboard
 ![Raspberry Pi Splunk Weather Dashboard](https://db.tt/tjRKejq3)
+
+#### [My adafruit.io Weather Dashboard](https://io.adafruit.com/lovebootcaptain/weatherpi#)
+![adafruit.io Weather Dashboard](https://db.tt/0fiiqiEH)
 
 ## Install
 
