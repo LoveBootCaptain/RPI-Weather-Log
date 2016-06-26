@@ -13,10 +13,10 @@ in german. You can change it via the options string in the python script. Read t
 more details.
 
 #### Raspberry Pi Splunk Weather Dashboard
-![Raspberry Pi Splunk Weather Dashboard](https://db.tt/tjRKejq3)
+![Raspberry Pi Splunk Weather Dashboard](https://db.tt/tjRKejq3) 
 
 #### [My adafruit.io Weather Dashboard](https://io.adafruit.com/lovebootcaptain/weatherpi#)
-![adafruit.io Weather Dashboard](https://db.tt/0fiiqiEH) 
+![adafruit.io Weather Dashboard](https://db.tt/0fiiqiEH)
 
 ## Install
 
@@ -39,7 +39,7 @@ more details.
 ## Make it a linux service
 
 * `sudo chmod +x rpi_weather_log.sh` make the .sh script executable, this will run as service
-* `sudo mv rpi_weather_log.sh /etc/init.d` move the script to /etc/init.d so it can be used in CLI
+* `sudo mv rpi_weather_log.sh /etc/init.d/` move the script to /etc/init.d/ so it can be used in CLI
 
 `sudo shutdown -r now` reboot
 
@@ -47,11 +47,21 @@ more details.
 
 To test if everything is set up correctly just try:
 
-* `sudo service rpi_weather_log start`
+* `sudo python3 /home/pi/RPI-Weather_Log/rpi_weather_log.py`
+
+`CTRL + C` to quit
+
+If it works you can also try the service:
+
+* `sudo service rpi_weather_log start` to start
+* `sudo service rpi_weather_log stop` to stop
+* `sudo service rpi_weather_log restart` to restart
+* `sudo service rpi_weather_log status` for status
 
 If everything is working correctly you can run the service on boot with:
 
-* `sudo update-rc.d rpi_weather_log defaults`
+* `sudo update-rc.d rpi_weather_log defaults` for enabling start at boot
+* `sudo update-rc.d rpi_weather_log remove` for disabling start at boot
 
 ## Enjoy
 
@@ -67,4 +77,4 @@ If everything is working correctly you can run the service on boot with:
 * [adafruit.io python api doc's](https://github.com/adafruit/io-client-python)
 * [adafruit BME280 python lib](https://github.com/adafruit/Adafruit_Python_BME280)
 * [Pimoroni Scroll pHAT python lib](https://github.com/pimoroni/scroll-phat)
-
+* [splunk doc's](http://docs.splunk.com/Documentation)
