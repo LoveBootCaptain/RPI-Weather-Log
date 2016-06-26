@@ -63,5 +63,7 @@ If everything is working correctly you can run the service on boot with:
 ### Credits
 
 adafruit for great open source code and hardware
+
 pimoroni for great open source code and hardware
+
 christian for his great splunk knowledge
