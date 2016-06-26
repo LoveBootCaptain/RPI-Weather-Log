@@ -12,39 +12,30 @@ Feel free to change it in any way you want... Sorry that the output is in german
 in german. You can change it via the options string in the python script. Read the forecast.io api documentation for 
 more details.
 
-![alt tag](https://db.tt/rXlH00jW)
+![Raspberry Pi Splunk Weather Dashboard](https://db.tt/tjRKejq3)
 
 ## Install
 
-`cd`
-
-`git clone https://github.com/LoveBootCaptain/RPI-Weather-Log.git`
+* `cd`
+* `git clone https://github.com/LoveBootCaptain/RPI-Weather-Log.git`
 
 ## Config
 
-`cd RPI-Weather-Log`
-
-`cp config.example.json config.json`
-
-`sudo nano config.json`
-
-Replace the `"xxxx..."` with your forecast.io-API-KEY in `"FORECAST_IO_KEY"`.
-
-Replace the `"xxxx..."` with your Adafruit.io-API-KEY in `"ADAFRUIT_IO_KEY"`.
-
-Change the size of the log file in `"LOG_SIZE"` (in Bytes). 10MB is default.
-
-Change the number of log file backups in `"BACKUP_COUNT"`. 100 is default.
-
-Change the refresh rate of weather data in `"REFRESH_RATE"`. 5min is default.
+* `cd RPI-Weather-Log`
+* `cp config.example.json config.json`
+* `sudo nano config.json`
+* Replace the `"xxxx..."` with your forecast.io-API-KEY in `"FORECAST_IO_KEY"`.
+* Replace the `"xxxx..."` with your Adafruit.io-API-KEY in `"ADAFRUIT_IO_KEY"`.
+* Change the size of the log file in `"LOG_SIZE"` (in Bytes). 10MB is default.
+* Change the number of log file backups in `"BACKUP_COUNT"`. 100 is default.
+* Change the refresh rate of weather data in `"REFRESH_RATE"`. 5min is default.
 
 `CTRL + S` for save and `CTRL + X` for quit
 
 ## Make it a linux service
 
-`sudo chmod +x rpi_weather_log.sh` make the .sh script executable, this will run as service
-
-`sudo mv rpi_weather_log.sh /etc/init.d` move the script to /etc/init.d so it can be used in CLI
+* `sudo chmod +x rpi_weather_log.sh` make the .sh script executable, this will run as service
+* `sudo mv rpi_weather_log.sh /etc/init.d` move the script to /etc/init.d so it can be used in CLI
 
 `sudo shutdown -r now` reboot
 
@@ -52,18 +43,24 @@ Change the refresh rate of weather data in `"REFRESH_RATE"`. 5min is default.
 
 To test if everything is set up correctly just try:
 
-`sudo service rpi_weather_log start`
+* `sudo service rpi_weather_log start`
 
 If everything is working correctly you can run the service on boot with:
 
-`sudo update-rc.d rpi_weather_log defaults`
+* `sudo update-rc.d rpi_weather_log defaults`
 
 ## Enjoy
 
 ### Credits
 
-adafruit for great open source code and hardware
+* adafruit for great open source code and hardware
+* pimoroni for great open source code and hardware
+* christian for his great splunk knowledge
 
-pimoroni for great open source code and hardware
+### References
 
-christian for his great splunk knowledge
+* [forecast.io api doc's](https://developer.forecast.io/docs/v2)
+* [adafruit.io python api doc's](https://github.com/adafruit/io-client-python)
+* [adafruit BME280 python lib](https://github.com/adafruit/Adafruit_Python_BME280)
+* [Pimoroni Scroll pHAT python lib](https://github.com/pimoroni/scroll-phat)
+
