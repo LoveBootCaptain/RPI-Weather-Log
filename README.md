@@ -1,5 +1,5 @@
 # RPI-Weather-Log
-A complete weather station for the RaspberryPi, using forecast.io and adafruit sensors to log all weather data to a file 
+A complete weather station for the Raspberry Pi, using forecast.io and adafruit sensors to log all weather data to a file 
 which can be used for SPLUNK data analysis. I included the scroll pHAT from Pimoroni to display some of the weather data. 
 There are also some examples shown who to make some nice outputs with string transformations. Some data is send to 
 adafruit.io. perhaps you have to change the feed names and io-data to your individual likings. Read the adafruit.io 
@@ -57,3 +57,9 @@ If everything is working correctly you can run the service on boot with:
 `sudo update-rc.d rpi_weather_log defaults`
 
 ## Enjoy
+
+### Credits
+
+adafruit for great open source code and hardware
+pimoroni for great open source code and hardware
+christian for his great splunk knowledge
